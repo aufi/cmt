@@ -20,9 +20,15 @@ cs:
         customer: "Zákazník"
         service: "Služba"
         amount: "Částka"
+      service_type:
+        name: "Název"
+        price: "Cena"
+        repeating: "Opakující se"
+        ord: "Pořadí"
     models:
       customer: "Zákazník"
       service: "Služba"
+      service_type: "Tarif"
       user: "Uživatel"
       payment: "Platba"
       invoice: "Faktura"
@@ -69,7 +75,7 @@ cs:
       message: "Zpráva"
     actions:
       dashboard:
-        title: "Správa aplikace"
+        title: "Aurem administrace"
         menu: "Dashboard"
         breadcrumb: "Dashboard"
       index:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620193220) do
+ActiveRecord::Schema.define(:version => 20130623085533) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -65,14 +65,24 @@ ActiveRecord::Schema.define(:version => 20130620193220) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+  create_table "service_types", :force => true do |t|
+    t.string   "name"
+    t.float    "price"
+    t.boolean  "repeating"
+    t.integer  "ord"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "services", :force => true do |t|
     t.string   "name"
     t.date     "paid_to"
     t.float    "price"
     t.text     "note"
     t.integer  "customer_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "service_type_id"
   end
 
   add_index "services", ["customer_id"], :name => "index_services_on_customer_id"
